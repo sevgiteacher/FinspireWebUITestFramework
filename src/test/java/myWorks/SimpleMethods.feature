@@ -5,7 +5,7 @@ Feature: UI test with Karate
     And delay(2000)
     When click("//input[@id='exp-4']")
 #  or  When click("input[id=exp-4]")
-#  or  When click('#exp-4')
+#  or  When click('#exp-4')   ( bu yazim sekli sadece id si olan elementler icin gecerlidir.)
     And delay(2000)
 
 
@@ -16,6 +16,7 @@ Feature: UI test with Karate
 #  or  When input('input[name=firstname]','Meryem')
     And delay(2000)
 
+
   Scenario: Learning fullscreen(maximize) and minimize method
     Given driver "http://www.practiceselenium.com/practice-form.html"
     And delay(2000)
@@ -25,6 +26,7 @@ Feature: UI test with Karate
     And minimize()
     And delay(2000)
 
+    
   Scenario: Learning match method
     Given driver "http://www.practiceselenium.com/practice-form.html"
     And delay(2000)
@@ -68,8 +70,8 @@ Feature: UI test with Karate
     And delay(3000)
     * fullscreen()
     * delay(2000)
-#    * select('select[id=continents]', 'Europe')
-    * select('select[id=continents]', 4)
+    * select('select[id=continents]', 'Europe')
+#   or  * select('select[id=continents]', 4)
     * delay(2000)
 
 
