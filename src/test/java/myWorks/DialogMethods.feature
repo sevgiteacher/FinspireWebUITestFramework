@@ -5,10 +5,10 @@ Feature: UI test with Karate
     * delay(2000)
     * fullscreen()
     * click("//button[@class='btn btn-danger']")
-    * delay(2000)
+    * delay(4000)
     * match driver.dialog == 'I am an alert box!'
     * dialog(true)
-    * delay(2000)
+    * delay(4000)
 
 
   Scenario: Learning dialog method for confirm boxes

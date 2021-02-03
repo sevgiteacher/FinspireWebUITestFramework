@@ -26,7 +26,7 @@ Feature: UI test with Karate
     And minimize()
     And delay(2000)
 
-    
+
   Scenario: Learning match method
     Given driver "http://www.practiceselenium.com/practice-form.html"
     And delay(2000)
@@ -70,8 +70,8 @@ Feature: UI test with Karate
     And delay(3000)
     * fullscreen()
     * delay(2000)
-    * select('select[id=continents]', 'Europe')
-#   or  * select('select[id=continents]', 4)
+#    * select('select[id=continents]', 'Europe')
+    * select('select[id=continents]', 4)
     * delay(2000)
 
 
@@ -96,5 +96,21 @@ Feature: UI test with Karate
     * delay(1000)
     * screenshot()
     * delay(3000)
+
+
+  Scenario: Learning clear method
+    Given driver "http://www.practiceselenium.com/practice-form.html"
+    And delay(3000)
+    * fullscreen()
+    * input('input[name=firstname]','Meryem')
+    * delay(2000)
+    * input('input[name=lastname]','Cemile')
+    * delay(2000)
+    * clear('input[name=firstname]')
+    * delay(2000)
+
+
+
+
 
 

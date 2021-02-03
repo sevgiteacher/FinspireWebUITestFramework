@@ -1,4 +1,5 @@
 Feature: Karate UI Automation Test
+
   Background:
     Given driver "http://www.practiceselenium.com/practice-form.html"
 
@@ -24,35 +25,35 @@ Feature: Karate UI Automation Test
     * delay(1000)
 
 
+  Scenario: use back, forward, fullscreen, refresh
+    * delay(2000)
+    * match driver.title == "practice-form"
+    * delay(1000)
+    * input("//input[@name='firstname']","Jo")
+    * delay(1000)
+    * click("//button[@class='btn btn-info']")
+    * delay(1000)
+    * match driver.title == "Welcome"
+    * back()
+    * delay(1000)
+    * match driver.title == "practice-form"
+    * delay(1000)
+    * forward()
+    * delay(1000)
+    * match driver.title == "Welcome"
+    * fullscreen()
+    * delay(1000)
+    * refresh()
+    * delay(3000)
 
-    Scenario: use back, forward, fullscreen, refresh
-      * delay(2000)
-      * match driver.title == "practice-form"
-      * delay(1000)
-      * input("//input[@name='firstname']","Jo")
-      * delay(1000)
-      * click("//button[@class='btn btn-info']")
-      * delay(1000)
-      * match driver.title == "Welcome"
-      * back()
-      * delay(1000)
-      * match driver.title == "practice-form"
-      * delay(1000)
-      * forward()
-      * delay(1000)
-      * match driver.title == "Welcome"
-      * fullscreen()
-      * delay(1000)
-      * refresh()
-      * delay(3000)
 
-
-      Scenario: use drop dawn and scroll methods
-        * delay(1000)
-        * scroll('select[id=continents]')
-        * select('select[id=continents]', 4)
+  Scenario: use drop dawn and scroll methods
+    * delay(1000)
+    * scroll('select[id=continents]')
+    * select('select[id=continents]', 4)
         # or select('select[id=continents]', 'Europe')
-        * delay(3000)
+    * delay(3000)
+
 
 
 

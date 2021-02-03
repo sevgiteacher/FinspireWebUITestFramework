@@ -127,3 +127,19 @@ Feature: Login page
     * delay(2000)
     * waitFor('{^div}If you have')
     * delay(2000)
+
+
+  Scenario: The user sign in to the page with enabled button
+    Given driver 'https://finspire.invisionapp.com/'
+    * delay(2000)
+    * fullscreen()
+    * delay(3000)
+    * click("#onetrust-accept-btn-handler")
+    * delay(2000)
+    * switchFrame(0)
+    * input("#signin_email","")
+    * delay(2000)
+    * input("#signin_password","123456")
+    * delay(2000)
+    * match enabled('{button}Sign in') == false
+    * delay(2000)
