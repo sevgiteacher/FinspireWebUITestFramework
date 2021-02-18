@@ -110,6 +110,15 @@ Feature: UI test with Karate
     * delay(2000)
 
 
+    Scenario: Drug and drop method
+      * driver 'https://www.seleniumeasy.com/test/drag-and-drop-demo.html'
+      * script("var myDragEvent = new Event('dragstart'); myDragEvent.dataTransfer = new DataTransfer()")
+      * waitFor('{}Draggable 1').script("_.dispatchEvent(myDragEvent)")
+      * script("var myDropEvent = new Event('drop'); myDropEvent.dataTransfer = myDragEvent.dataTransfer")
+      * delay(3000)
+      * script('#mydropzone', "_.dispatchEvent(myDropEvent)")
+      * delay(3000)
+ #     * screenshot()
 
 
 

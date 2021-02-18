@@ -1,4 +1,5 @@
 Feature: Login page
+
   Scenario: The user logins to the page
 
     Given driver 'https://finspire.invisionapp.com/'
@@ -143,3 +144,33 @@ Feature: Login page
     * delay(2000)
     * match enabled('{button}Sign in') == false
     * delay(2000)
+
+  Scenario: The user sign in create interest plan
+    Given driver 'https://fe-admin-web.test.finspire.tech/'
+    * delay(2000)
+    * fullscreen()
+    * delay(2000)
+    * input('#email', 'test2@test.com')
+    * delay(1000)
+    * input('#password', 'Test135!')
+    * delay(1000)
+    * click('#SignIn')
+    * delay(3000)
+    * waitFor("//a[text()='Interest plan definitions']")
+    * click("//a[text()='Interest plan definitions']")
+    * delay(3000)
+    * click("//span[text()='Create interest plan']")
+    * delay(3000)
+    * input("#ratePlanName", "Test")
+    * delay(2000)
+    * click('#currency0')
+    * delay(3000)
+    * input("#indexRateKey", "High Risk (GBP)")
+    * delay(2000)
+    * click("//li[text()='High Risk (GBP)']")
+    * delay(2000)
+    * input("#effectiveDate", "12102021")
+    * delay(2000)
+
+
+
